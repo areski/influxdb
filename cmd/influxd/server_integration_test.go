@@ -630,7 +630,9 @@ func Test_ServerMultiLargeBatchIntegration(t *testing.T) {
 }
 
 func Test_ServerSingleGraphiteIntegration(t *testing.T) {
-	//t.Skip()
+	if testing.Short() {
+		t.Skip()
+	}
 	nNodes := 1
 	basePort := 8790
 	testName := "graphite integration"
